@@ -53,11 +53,3 @@ include('html-classes/masonry-html-class.php');
 
 //Loading vandors
 include('vandors/mr-image-resize/mr-image-resize.php');
-
-
-//Loading Demos 
-
-//include(ACOC_DRI.'demos/metabox-demo.php');
-//include(ACOC_DRI.'demos/setting-demo.php');
-//include(ACOC_DRI.'demos/posttype-demo.php');
-//include(ACOC_DRI.'demos/post-column-demo.php');
