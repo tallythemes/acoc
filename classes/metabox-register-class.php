@@ -1,5 +1,4 @@
 <?php
-if(!class_exists('acoc_metabox_register')):
 class acoc_metabox_register {
 	
 	public $options;
@@ -131,4 +130,3 @@ class acoc_metabox_register {
 		
 	}
 }
-endif;

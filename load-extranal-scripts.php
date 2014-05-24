@@ -5,14 +5,20 @@ function acoc_load_extranal_scripts(){
 	$js = ACOC_URL . 'assets/js/';
 	
 	wp_enqueue_script( 'modernizr', $js.'modernizr.custom.97507.js', '', '2.8.1', false );
+	
 	wp_register_style( 'acoc-flexslider', $css.'flexslider.css', '', '2.2.2' );
 	wp_register_script( 'jquery-flexslider', $js.'jquery.flexslider-min.js', '', '2.2.2', true );
 	
+	wp_register_style( 'jquery-prettyPhoto', $css.'prettyPhoto.css', '', '3.1.5' );
+	wp_register_script( 'jquery-prettyPhoto', $js.'jquery.prettyPhoto.js', '', '3.1.5', true );
+	
 	wp_register_script( 'jquery-imagesloaded', $js.'imagesloaded.pkgd.min.js', '', '3.1.6', true );
 	
-	//wp_register_script( 'jquery-isotope', $js.'isotope.pkgd.min.js', '', '2.0.0', true );
+	wp_register_script( 'jquery-isotope','http://cdn.jsdelivr.net/isotope/2.0.0/isotope.pkgd.min.js', '', '2.0.0', true );
+	
 	wp_register_script( 'jquery-shuffle', $js.'jquery.shuffle.min.js', array('jquery', 'modernizr'), '2.1.1', true );
-	wp_enqueue_script( 'jquery-masonry', $js.'masonry.pkgd.min.js', array('jquery'), '2.1.1', true );
+	
+	wp_register_script( 'jquery-masonry', $js.'masonry.pkgd.min.js', array('jquery'), '2.1.1', true );
 	
 	wp_register_style( 'font-awesome', $css.'font-awesome.min.css', '', '4.0.3' );
 	
