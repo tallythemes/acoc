@@ -41,6 +41,7 @@ include('classes/post-type-register-class.php');
 include('classes/post-column-class.php');
 include('classes/template-file-loader-class.php');
 include('classes/script-register-class.php');
+include('classes/tinymce-register-class.php');
 
 
 //Loading html-classes
