@@ -17,10 +17,10 @@ namespace: acoc
 
 ACOC
 */
-
 $path_dir = trailingslashit(str_replace('\\','/',dirname(__FILE__)));
 $path_abs = trailingslashit(str_replace('\\','/',ABSPATH));
 
+define('ACOC', "ACOC Framework" );
 define('ACOC_URL', site_url(str_replace( $path_abs, '', $path_dir )) );
 define('ACOC_DRI', $path_dir );
 if(!defined('ACOC_IMAGE_RETINA_SUPPORT'))define('ACOC_IMAGE_RETINA_SUPPORT', false );
@@ -53,3 +53,26 @@ include('html-classes/masonry-html-class.php');
 
 //Loading vandors
 include('vandors/mr-image-resize/mr-image-resize.php');
+
+
+
+/**
+ * Forces our plugin to be loaded first. This is to ensure that plugins that use the framework have access to
+ * this class.
+ *
+ * @access  public
+ * @return  void
+ * @since   1.0
+ * @see	 http://snippets.khromov.se/modify-wordpress-plugin-load-order/
+*/
+add_action( 'activated_plugin', 'acoc_forceLoadFirst');
+function acoc_forceLoadFirst() {
+	$path = str_replace( WP_PLUGIN_DIR . '/', '', __FILE__ );
+	if ( $plugins = get_option( 'active_plugins' ) ) {
+		if ( $key = array_search( $path, $plugins ) ) {
+			array_splice( $plugins, $key, 1 );
+			array_unshift( $plugins, $path );
+			update_option( 'active_plugins', $plugins );
+		}
+	}
+}
