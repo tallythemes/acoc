@@ -36,9 +36,15 @@ function acoc_load_extranal_scripts(){
 	/**- Font Awesome -**/
 	wp_register_style( 'font-awesome', $css.'font-awesome.min.css', '', '4.0.3' );
 	
-	/**- Googlr Map -**/
+	/**- Google Map -**/
 	wp_register_script( 'google-map', 'http://maps.google.com/maps/api/js?sensor=true', array(), null);
 	wp_register_script( 'jquery-gomap', $js.'jquery.gomap-1.3.2.min.js', array(), null);
+	
+	/**- gauge -**/
+	wp_register_script('jquery-gauge', $js.'gauge.min.js', array(), null);
+	
+	/**- waypoints -**/
+	wp_register_script('jquery-waypoints', $js.'waypoints.min.js', array(), null);
 	
 	wp_enqueue_style( 'acoc', $css.'acoc.css', '', '1.0' );
 }
