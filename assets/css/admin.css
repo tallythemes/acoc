@@ -4,6 +4,22 @@
 .acoc-metabox-item span.description{ display:block; width:100%; clear:both; margin-bottom:4px; margin-top:4px; }
 
 
+/* fields style
+-------------------------*/
+.acoc-form-field{ margin-bottom:20px; }
+.acoc-form-field input[type="text"]{width:25em;	clear:right;}
+.acoc-form-field label{
+	text-align: left;
+	padding: 10px 10px 10px 0;
+	width: 200px;
+	line-height: 1.3;
+	font-weight: 600;
+	display:inline-block;
+	text-transform:uppercase;
+}
+.acoc-form-field span.description{ display: block; opacity: .8; font-style: italic; }
+
+
 /* Settings css
 -------------------------*/
 .acoc-setting-item{ margin-bottom:20px; }
@@ -18,3 +34,14 @@
 	display:inline-block;
 }
 .acoc-setting-item span.description{ margin-left:210px; display: block; }
+
+
+/* Style for TinyMCE class
+-------------------------*/
+.acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger { color: #555; display: block; padding: 15px; border: 1px solid #ddd; margin: 0; margin-top: 12px; cursor: pointer; }
+.acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger:after{ font-family: dashicons; content: '\f132'; float: left; padding-top: 2px; padding-right:7px; }
+.acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger:hover { background-color: #eee; text-decoration: none; }
+.acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger.active, 
+.acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger.active:hover { color: #000; background-color: #eee; text-decoration: none; }
+.acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger.active:after, .acoc_tinymce_shortcode_holder .acoc_tinymce_toggle_trigger.active:hover:after{ content: '\f460'; }
+.acoc_tinymce_shortcode_holder .acoc_tinymce_shortcode_fields { display: none; overflow: hidden; padding: 15px; border: 1px solid #ddd; border-top: 0px; }

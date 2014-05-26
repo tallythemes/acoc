@@ -18,15 +18,17 @@ class acoc_field_select{
 		$uid = $option['id'].'_acoc_slideshow_'.rand();
 		if($value == ""){ $value = $option['std']; }
 		
-		echo '<label for="'.$option['id'].'"><strong>'.$option['label'].'</strong></label>';
-		echo '<select id="'.$option['id'].'" name="'.$option['id'].'">';
-			if(is_array($option['options']) && !empty($option['options'])){
-				foreach($option['options'] as $items ){
-					echo '<option value="'.$items['value'].'" '.selected( $value, $items['value'], false ).'>'.$items['label'].'</option>';
+		echo '<div class="acoc-form-field field-type-select">';
+			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
+			echo '<select id="'.$option['id'].'" name="'.$option['id'].'">';
+				if(is_array($option['options']) && !empty($option['options'])){
+					foreach($option['options'] as $items ){
+						echo '<option value="'.$items['value'].'" '.selected( $value, $items['value'], false ).'>'.$items['label'].'</option>';
+					}
 				}
-			}
-		echo '</select>';
-		echo '<br><span>'.$option['des'].'</span>';
+			echo '</select>';
+			echo '<br><span>'.$option['des'].'</span>';
+		echo '</div>';
 	}
 	
 	

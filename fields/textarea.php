@@ -17,9 +17,11 @@ class acoc_field_textarea{
 		
 		$uid = $option['id'].'_acoc_slideshow_'.rand();
 		
-		echo '<label for="'.$option['id'].'"><strong>'.$option['label'].'</strong></label>';
-		echo '<textarea id="'.$option['id'].'" name="'.$option['id'].'" rows="'.$option['rows'].'" style="width:100%;">'.$value.'</textarea>';
-		echo '<span>'.$option['des'].'</span>';
+		echo '<div class="acoc-form-field field-type-textarea">';
+			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
+			echo '<textarea id="'.$option['id'].'" name="'.$option['id'].'" rows="'.$option['rows'].'" style="width:100%;">'.$value.'</textarea>';
+			echo '<span class="description">'.$option['des'].'</span>';
+		echo '</div>';
 	}
 	
 	

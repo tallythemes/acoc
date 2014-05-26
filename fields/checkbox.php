@@ -19,9 +19,11 @@ class acoc_field_checkbox{
 		$checked = '';
 		if( $value == 1 ){ $checked = 'checked="checked"'; }
 		
-		echo '<label for="'.$option['id'].'"><strong>'.$option['label'].'</strong></label><br>';
-		echo '<input type="checkbox" id="'.$option['id'].'" name="'.$option['id'].'" value="'.$value.'" '.$checked.' />'.$value;
-		echo '<span>'.$option['des'].'</span>';
+		echo '<div class="acoc-form-field field-type-checkbox">';
+			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
+			echo '<input type="checkbox" id="'.$option['id'].'" name="'.$option['id'].'" value="'.$value.'" '.$checked.' />'.$value;
+			echo '<span>'.$option['des'].'</span>';
+		echo '</div>';
 	}
 	
 	

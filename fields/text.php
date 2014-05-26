@@ -16,9 +16,11 @@ class acoc_field_text{
 		
 		if($value == ""){ $value = $option['std']; }
 		
-		echo '<label for="'.$option['id'].'"><strong>'.$option['label'].'</strong></label>';
-		echo '<input type="text" id="'.$option['id'].'" name="'.$option['id'].'" value="'.$value.'" /><br />';
-		echo '<span class="description">'.$option['des'].'</span>';
+		echo '<div class="acoc-form-field field-type-text">';
+			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
+			echo '<input type="text" id="'.$option['id'].'" name="'.$option['id'].'" value="'.$value.'" /><br />';
+			echo '<span class="description">'.$option['des'].'</span>';
+		echo '</div>';
 	}
 	
 	
