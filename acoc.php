@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: ACOC Framework
-Plugin URI: http://bignetstudio.com/
-Description: A wordpress  
-Version: 0.1
-Author: BignetStudio
-Author URI: http://bignetstudio.com/
+Plugin URI: https://github.com/tallythemes/acoc
+Description: WordPress Plugin Development framework.
+Version: 0.2
+Author: TallyThemes
+Author URI: http://tallythemes.com/
 
 Dual licensed under the MIT and GPL licenses:
 http://www.opensource.org/licenses/mit-license.php
