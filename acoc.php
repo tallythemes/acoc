@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: ACOC Framework
+Plugin Name: ACOC
 Plugin URI: https://github.com/tallythemes/acoc
 Description: WordPress Plugin Development framework.
-Version: 0.2
+Version: 0.3
 Author: TallyThemes
 Author URI: http://tallythemes.com/
 
