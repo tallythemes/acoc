@@ -38,10 +38,12 @@ include('load-extranal-scripts.php');
 include('classes/metabox-register-class.php');
 include('classes/setting-api-class.php');
 include('classes/post-type-register-class.php');
+include('classes/taxonomy-register-class.php');
 include('classes/post-column-class.php');
 include('classes/template-file-loader-class.php');
 include('classes/script-register-class.php');
 include('classes/tinymce-register-class.php');
+include('classes/post-taxonomy-filter.php');
 
 
 //Loading html-classes

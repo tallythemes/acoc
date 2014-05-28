@@ -19,6 +19,15 @@
 }
 .acoc-form-field span.description{ display: block; opacity: .8; font-style: italic; }
 
+/* fields style (list_item)
+-------------------------*/
+.field-type-list_item{  }
+.field-type-list_item.acoc-form-field span.description{ margin-top:-10px; margin-bottom:15px; } 
+.field-type-list_item .list-row{ background: #F8F8F8;border: solid 1px #D8D7D7;padding: 20px;border-radius: 3px; margin-bottom:8px; }
+.field-type-list_item .list-heading{  }
+.field-type-list_item .row-list-title{ font-size:16px; text-decoration:none; font-weight:bold; }
+.field-type-list_item .row-list-edit{ float:right; margin-left:10px; text-decoration:none; color:#33AF02; }
+.field-type-list_item .row-list-remove{ float:right; text-decoration:none; color:#FD0000; }
 
 /* Settings css
 -------------------------*/
