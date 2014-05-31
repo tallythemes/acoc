@@ -6,16 +6,15 @@
 
 /* fields style
 -------------------------*/
-.acoc-form-field{ margin-bottom:20px; }
+.acoc-form-field{ margin-bottom:30px; }
 .acoc-form-field input[type="text"]{width:25em;	clear:right;}
 .acoc-form-field label{
 	text-align: left;
 	padding: 10px 10px 10px 0;
-	width: 200px;
 	line-height: 1.3;
 	font-weight: 600;
 	display:inline-block;
-	text-transform:uppercase;
+	font-size:15px;
 }
 .acoc-form-field span.description{ display: block; opacity: .8; font-style: italic; }
 
@@ -29,20 +28,11 @@
 .field-type-list_item .row-list-edit{ float:right; margin-left:10px; text-decoration:none; color:#33AF02; }
 .field-type-list_item .row-list-remove{ float:right; text-decoration:none; color:#FD0000; }
 
-/* Settings css
+/* fields style (heading)
 -------------------------*/
-.acoc-setting-item{ margin-bottom:20px; }
-.acoc-setting-item input[type="text"]{width:25em;	clear:right;}
-.acoc-setting-item input[type="text"]:after{ content:"": } 
-.acoc-setting-item label{
-	text-align: left;
-	padding: 20px 10px 20px 0;
-	width: 200px;
-	line-height: 1.3;
-	font-weight: 600;
-	display:inline-block;
-}
-.acoc-setting-item span.description{ margin-left:210px; display: block; }
+.acoc-form-field.field-type-heading{ margin-bottom:20px; }
+.acoc-form-field.field-type-heading p{ margin-top:3px; margin-bottom:10px; }
+.acoc-form-field.field-type-heading h3{ margin-bottom:10px; }
 
 
 /* Style for TinyMCE class
