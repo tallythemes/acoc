@@ -26,10 +26,9 @@ function mr_image_resize($url, $width=null, $height=null, $crop=true, $align='c'
 
   global $wpdb;
 
-  // Get common vars
-  $args = func_get_args();
-  $common = mr_common_info($args);
-
+  // Get common vars (func_get_args() only get specified values)
+  $common = mr_common_info($url, $width, $height, $crop, $align, $retina);
+  
   // Unpack vars if got an array...
   if (is_array($common)) extract($common);
 
@@ -140,11 +139,8 @@ function mr_image_resize($url, $width=null, $height=null, $crop=true, $align='c'
 
 // Returns common information shared by processing functions
 
-function mr_common_info($args) {
+function mr_common_info($url, $width, $height, $crop, $align, $retina) {
 
-  // Unpack arguments
-  list($url, $width, $height, $crop, $align, $retina) = $args;
-  
   // Return null if url empty
   if (empty($url)) {
     return is_user_logged_in() ? "image_not_specified" : null;
@@ -257,8 +253,8 @@ function mr_delete_resized_images($post_id) {
     // Get the resized images filename
     $file = $wp_upload_dir['basedir'] . '/' . $pathinfo['dirname'] . '/' . $pathinfo['filename'] . '-' . $dims . '.' . $pathinfo['extension'];
 
-    // Delete the resized image
-    is_user_logged_in() ? unlink($file) : @unlink($file);
+    // Delete the resized image (if it has not yet been deleted)
+    @unlink($file);
 
   }
 
