@@ -3,8 +3,21 @@
 -------------------------------------------------*/
 if(!function_exists('acoc_image_size')):
 function acoc_image_size($url, $width = '', $height = '', $crop = true, $align = '', $retina = ACOC_IMAGE_RETINA_SUPPORT){
+	global $wpdb;
+	
+    $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$url'";
+    $id = $wpdb->get_var($query);
+	
+	$url = ( $url == "" ) ? 'http://placehold.it/'.$width.'x'.$height.'' : $url;
+	
 	if(function_exists('mr_image_resize')){
-		return mr_image_resize($url, $width, $height, $crop, $align, $retina);
+		if($id == false){
+			return $url;
+		}else{
+			return mr_image_resize($url, $width, $height, $crop, $align, $retina);
+		}
+	}else{
+		return $url;
 	}
 }
 endif;
