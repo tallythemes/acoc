@@ -1,11 +1,4 @@
 <?php
-/*
-Script Name: 	WP Flexslider
-Author     : 	Sazzad Hussain (@sazzadh / sazzadh.com)
-Description: 	This will output Slideshow content
-Version: 		1.0
-*/
-
 /**
  * Released under the GPL license
  * http://www.opensource.org/licenses/gpl-license.php
@@ -116,6 +109,7 @@ class acoc_flexslider2_html{
 	
 	
 	function start(){
+				
 		$output = '';
 		$output .= '<style type="text/css">';
 			if(($this->itemWidth != '0') && ($this->itemMargin != '0')) { 
