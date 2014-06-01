@@ -1,6 +1,6 @@
 <?php
-if(!class_exists('acoc_field_select')):
-class acoc_field_select{
+if(!class_exists('acoc_field_taxonomy_select')):
+class acoc_field_taxonomy_select{
 		
 	function html($atts, $value){
 		global $post;
@@ -12,19 +12,23 @@ class acoc_field_select{
 			'std' => '',
 			'des' => '',
 			'filter' => '', //sanitize_text_field, esc_attr
-			'options' => array()
+			'taxonomy' => 'category'
 		), $atts );
 		
 		if($value == ""){ $value = $option['std']; }
 		
-		echo '<div class="acoc-form-field field-type-select">';
+		$terms = get_terms($option['taxonomy']);
+		
+		echo '<div class="acoc-form-field field-type-taxonomy_select">';
 			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
 			echo '<select id="'.$option['id'].'" name="'.$option['id'].'">';
-				if(is_array($option['options']) && !empty($option['options'])){
-					foreach($option['options'] as $items ){
-						echo '<option value="'.$items['value'].'" '.selected( $value, $items['value'], false ).'>'.$items['label'].'</option>';
+			
+				if ( !empty( $terms ) && !is_wp_error( $terms ) ){
+					foreach($terms as $term ){
+						echo '<option value="'.$term->term_id.'" '.selected( $value, $term->term_id, false ).'>'.$term->name.'</option>';
 					}
 				}
+				
 			echo '</select>';
 			echo '<br><span>'.$option['des'].'</span>';
 		echo '</div>';

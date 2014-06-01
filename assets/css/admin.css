@@ -17,6 +17,7 @@
 	font-size:15px;
 }
 .acoc-form-field span.description{ display: block; opacity: .8; font-style: italic; }
+.acoc-form-field select{ min-width:350px; }
 
 /* fields style (list_item)
 -------------------------*/
