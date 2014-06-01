@@ -22,9 +22,8 @@ class acoc_field_post_multi_select{
 		echo '<div class="acoc-form-field field-type-post_select">';
 			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
 			echo '<select id="'.$option['id'].'" name="'.$option['id'].'[]" multiple="multiple" >';
-			
+				echo '<option selected="selected"></option>';
 				if ( $the_query->have_posts() ){
-					echo '<option selected="selected"></option>';
 					while ( $the_query->have_posts() ) { $the_query->the_post();
 						echo '<option value="'.get_the_ID().'" '.selected( $value, get_the_ID(), false ).'>'.get_the_title().'</option>';
 					}

@@ -22,9 +22,9 @@ class acoc_field_taxonomy_multi_select{
 		echo '<div class="acoc-form-field field-type-taxonomy_select">';
 			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
 			echo '<select id="'.$option['id'].'" name="'.$option['id'].'[]" multiple="multiple" >';
-			
+				echo '<option selected="selected"></option>';
 				if ( !empty( $terms ) && !is_wp_error( $terms ) ){
-					echo '<option selected="selected"></option>';
+					
 					foreach($terms as $term ){
 						echo '<option value="'.$term->slug.'" '.selected( $value, $term->slug, false ).'>'.$term->name.'</option>';
 					}
