@@ -17,7 +17,7 @@ class acoc_field_heading{
 		if($value == ""){ $value = $option['std']; }
 		
 		echo '<div class="acoc-form-field field-type-heading">';
-			if($option['label'] !== ''){ echo '<h3>'.$option['label'].'</h3>'; }
+			if($option['label'] !== ''){ echo '<p class="field-heading">'.$option['label'].'</p>'; }
 			if($option['des'] !== ''){ echo '<p>'.$option['des'].'</p>'; }
 			echo '<hr />';
 		echo '</div>';

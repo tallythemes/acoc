@@ -15,17 +15,18 @@ class acoc_field_image_upload{
 			'type' => '',
 			'std' => '',
 			'des' => '',
+			'size' => '300x300',
 			'filter' => '', //sanitize_text_field, esc_attr
 		), $atts );
 		
 		if($value == ""){ $value = $option['std']; }
-		$image_url = ( $value == "" ) ? 'http://placehold.it/350x150' : $value;
+		$image_url = ( $value == "" ) ? 'http://placehold.it/'.$option['size'] : $value;
 		
-		echo '<div class="acoc-form-field field-type-text">';
+		echo '<div class="acoc-form-field field-type-image_upload">';
 			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
 			echo '<input type="text" id="'.$option['id'].'_field" name="'.$option['id'].'" value="'.$value.'" />';
 			echo '<a href="#" id="'.$option['id'].'_button" class="button button-primary">Upload Image</a><br>';
-			echo '<img src="'.$image_url.'" id="'.$option['id'].'_image" style="max-width:50%;  margin-bottom:1px; clear:both; flot:left;"><br>';
+			echo '<img src="'.$image_url.'" id="'.$option['id'].'_image" /><br>';
 			echo '<span class="description">'.$option['des'].'</span>';
 		echo '</div>';		
 		?>
