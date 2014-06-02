@@ -87,3 +87,20 @@ function acoc_post_taxonomys_name($post_id, $taxonomy, $divider = ", "){
 		return '&nbsp;';
 	endif; 
 }
+
+/* Category name of the post
+--------------------------------------------------------*/
+function acoc_post_taxonomys_link($post_id, $taxonomy, $divider = ", "){
+	$terms = get_the_terms( $post_id, $taxonomy );
+						
+	if ( $terms && ! is_wp_error( $terms ) ) : 
+		$draught_links = array();
+		foreach ( $terms as $term ) {
+			$draught_links[] = '<a href="'.get_term_link($term->slug, $taxonomy).'">'.$term->name.'</a>';
+		}					
+		$on_draught = join( $divider, $draught_links );
+		return $on_draught;
+	else:
+		return '&nbsp;';
+	endif; 
+}
