@@ -22,7 +22,7 @@ class acoc_field_checkbox{
 		echo '<div class="acoc-form-field field-type-checkbox">';
 			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';
 			echo '<input type="checkbox" id="'.$option['id'].'" name="'.$option['id'].'" value="'.$value.'" '.$checked.' />'.$value;
-			echo '<span>'.$option['des'].'</span>';
+			echo '<span class="description">'.$option['des'].'</span>';
 		echo '</div>';
 	}
 	

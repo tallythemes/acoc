@@ -54,7 +54,7 @@ class acoc_field_parallax{
 		$uid = $option['id'].'_acoc_parallax_'.rand();
 		
 		echo '<div class="acoc-form-field field-type-parallax">';
-		echo '<label for="'.$option['id'].'"><strong>'.$option['label'].'</strong></label>';
+		echo '<label for="'.$option['id'].'"><strong>'.$option['label'].'</strong></label><br><br>';
 		echo '<span>'.$option['des'].'</span>';
 		
 		echo '<ul class="acoc-parallax-items-'.$uid.'" id="'.$option['id'].'">';

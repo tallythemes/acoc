@@ -30,7 +30,7 @@ class acoc_field_post_select{
 				}
 				
 			echo '</select>';
-			echo '<br><span>'.$option['des'].'</span>';
+			echo '<br><span class="description">'.$option['des'].'</span>';
 		echo '</div>';
 	}
 	
