@@ -1,10 +1,10 @@
-.acoc{ }
+.acoc-clear{ width:100%; height:1px; clear:both; margin:0; }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 	fields style
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .acoc-form-field{ margin-bottom:30px; }
-.acoc-form-field input[type="text"]{width:25em;	clear:right; max-width:100%;}
+.acoc-form-field input[type="text"]{width:100%;	clear:right; max-width:100%;}
 .acoc-form-field label{
 	text-align: left;
 	padding: 10px 10px 10px 0;
@@ -14,7 +14,7 @@
 	font-size:15px;
 }
 .acoc-form-field span.description{ display: block; opacity: .8; font-style: italic; }
-.acoc-form-field select{ min-width:350px; }
+.acoc-form-field select{ min-width:100px; }
 
 
 /*-- fields style (list_item) --*/
@@ -38,6 +38,22 @@
 .acoc-form-field.field-type-image_upload input[type="text"]{ width:100%; }
 .acoc-form-field.field-type-image_upload .button { width:104px; text-align:center; margin-right:-110px; float:right; margin-top:-29px; }
 .acoc-form-field.field-type-image_upload img{ margin-top:5px; max-width:100%; }
+
+
+/*-- fields style (parallax)--*/
+.acoc-form-field.field-type-parallax{  }
+.acoc-form-field.field-type-parallax ul{  list-style-type:none; }
+.acoc-form-field.field-type-parallax li{ background: #F8F8F8;border: solid 1px #D8D7D7;padding: 20px;border-radius: 3px; margin-bottom:8px; list-style-type:none; }
+.acoc-form-field.field-type-parallax .row-addnew{ margin-bottom:20px; }
+.acoc-form-field.field-type-parallax .row-title{ font-size: 16px; text-decoration: none; }
+.acoc-form-field.field-type-parallax .row-edit{ float: right; margin-left: 10px; text-decoration: none; color: #33AF02; }
+.acoc-form-field.field-type-parallax .row-delete{ float: right; text-decoration: none; color: #FD0000; }
+.acoc-form-field.field-type-parallax .form-table td{ vertical-align: top; }
+.acoc-form-field.field-type-parallax .wp-picker-container{  }
+.acoc-form-field.field-type-parallax label{ text-align: left; padding: 0; padding-bottom:5px; line-height: 1.3; font-weight: 600; display: inline-block; font-size: 13px; }
+.acoc-form-field.field-type-parallax .button-primary.image-upload{ width:150px; text-align:center; max-width:100%; }
+.acoc-form-field.field-type-parallax .preview-image{ width:150px; max-width:100%;  }
+.acoc-form-field.field-type-parallax .bg-image-field{ width:150px; }
 
 
 
