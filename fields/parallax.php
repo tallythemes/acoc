@@ -85,6 +85,22 @@ class acoc_field_parallax{
 										echo '<label>Sub Title</label><br >';
 										echo '<input id="slider-subtitle-'.$uid.'" type="text" value="'.$parallax_item['subtitle'].'" name="'.$option['id'].'-subtitle[]" />';
 									echo '</td>';
+									echo '<td>';
+										echo '<label>Align</label><br >';
+										echo '<select id="slider-align-title-'.$uid.'" type="text" value="'.$parallax_item['align-title'].'" name="'.$option['id'].'-align-title[]">
+												<option '.selected($parallax_item['align-title'], 'left', false).' value="left">left</option>
+												<option '.selected($parallax_item['align-title'], 'center', false).' value="center">center</option>
+												<option '.selected($parallax_item['align-title'], 'right', false).' value="right">right</option>
+												<option '.selected($parallax_item['align-title'], 'none', false).' value="none">none</option>
+											  </select><br >';
+									echo '</td>';
+									echo '<td>';
+										echo '<label>Disable Titles</label><br >';
+										echo '<select id="slider-disable-title-'.$uid.'" type="text" value="'.$parallax_item['disable-title'].'" name="'.$option['id'].'-disable-title[]">
+												<option '.selected($parallax_item['disable-title'], 'no', false).' value="no">no</option>
+												<option '.selected($parallax_item['disable-title'], 'yes', false).' value="yes">yes</option>
+											  </select><br >';
+									echo '</td>';
 								echo '</tr>';
 							echo '</table>';
 							
@@ -133,7 +149,7 @@ class acoc_field_parallax{
 								echo '<tr>';
 									echo '<td>';
 										echo '<label>Background color</label><br >';
-										echo '<input id="slider-bg-color-'.$uid.'" type="text" value="'.$parallax_item['bg-color'].'" name="'.$option['id'].'-bg-color[]" class="acoc-parallax-color-field" /><br ><br >';
+										echo '<input id="slider-bg-color-'.$uid.'" type="text" value="'.$parallax_item['background-color'].'" name="'.$option['id'].'-background-color[]" class="acoc-parallax-color-field" /><br ><br >';
 										
 										echo '<label>Text color</label><br >';
 										echo '<input id="slider-text-color-'.$uid.'" type="text" value="'.$parallax_item['text-color'].'" name="'.$option['id'].'-text-color[]" class="acoc-parallax-color-field" /><br ><br >';
@@ -143,9 +159,9 @@ class acoc_field_parallax{
 									echo '</td>';
 									echo '<td width="200">';
 										echo '<label><strong>Background Image</strong></label><br>';
-										echo '<input type="text" value="'.$parallax_item['image'].'" name="'.$option['id'].'-image[]" id="'.$uid.'_field" class="bg-image-field"/><br>';
+										echo '<input type="text" value="'.$parallax_item['background-image'].'" name="'.$option['id'].'-background-image[]" id="'.$uid.'_field" class="bg-image-field"/><br>';
 										echo '<a href="#" class="upload-image-'.$uid.' button button-primary image-upload">Upload Image</a><br>';
-										echo '<img src="'.$parallax_item['image'].'" class="preview-image" id="'.$uid.'_image"><br>';
+										echo '<img src="'.$parallax_item['background-image'].'" class="preview-image" id="'.$uid.'_image"><br>';
 									echo '</td>';
 									echo '<td >';
 										echo '<label>Background Attachment</label><br >';
@@ -192,6 +208,15 @@ class acoc_field_parallax{
 										echo '<label>Section ID</label><br >';
 										echo '<input id="slider-section-id-'.$uid.'" type="text" value="'.$parallax_item['section-id'].'" name="'.$option['id'].'-section-id[]" />';
 									echo '</td>';
+									echo '<td>';
+										echo '<label>Content Align</label><br >';
+										echo '<select id="slider-align-content-'.$uid.'" type="text" value="'.$parallax_item['align-content'].'" name="'.$option['id'].'-align-content[]">
+												<option '.selected($parallax_item['align-content'], 'left', false).' value="left">left</option>
+												<option '.selected($parallax_item['align-content'], 'center', false).' value="center">center</option>
+												<option '.selected($parallax_item['align-content'], 'right', false).' value="right">right</option>
+												<option '.selected($parallax_item['align-content'], 'none', false).' value="none">none</option>
+											  </select><br >';
+									echo '</td>';
 								echo '</tr>';
 							echo '</table>';
 							
@@ -230,6 +255,22 @@ class acoc_field_parallax{
 						echo '<td>';
 							echo '<label>Sub Title</label><br >';
 							echo '<input id="slider-subtitle-'.$uid.'" type="text" value="" name="'.$option['id'].'-subtitle[]" />';
+						echo '</td>';
+						echo '<td>';
+							echo '<label>Title Align</label><br >';
+							echo '<select id="slider-align-title-'.$uid.'" type="text" value="" name="'.$option['id'].'-align-title[]">
+									<option value="left">left</option>
+									<option value="center">center</option>
+									<option value="right">right</option>
+									<option value="none">none</option>
+								  </select><br >';
+						echo '</td>';
+						echo '<td>';
+							echo '<label>Disable Titles</label><br >';
+							echo '<select id="slider-disable-title-'.$uid.'" type="text" value="'.$parallax_item['disable-title'].'" name="'.$option['id'].'-disable-title[]">
+							<option value="no">no</option>
+							<option value="yes">yes</option>
+							</select><br >';
 						echo '</td>';
 					echo '</tr>';
 				echo '</table>';
@@ -279,7 +320,7 @@ class acoc_field_parallax{
 					echo '<tr>';
 						echo '<td>';
 							echo '<label>Background color</label><br >';
-							echo '<input id="slider-bg-color-'.$uid.'" type="text" value="" name="'.$option['id'].'-bg-color[]" class="acoc-parallax-color-field" /><br ><br >';
+							echo '<input id="slider-bg-color-'.$uid.'" type="text" value="" name="'.$option['id'].'-background-color[]" class="acoc-parallax-color-field" /><br ><br >';
 							
 							echo '<label>Text color</label><br >';
 							echo '<input id="slider-text-color-'.$uid.'" type="text" value="" name="'.$option['id'].'-text-color[]" class="acoc-parallax-color-field" /><br ><br >';
@@ -289,7 +330,7 @@ class acoc_field_parallax{
 						echo '</td>';
 						echo '<td width="200">';
 							echo '<label><strong>Background Image</strong></label><br>';
-							echo '<input type="text" value="" name="'.$option['id'].'-image[]" id="'.$uid.'_field" class="bg-image-field"/><br>';
+							echo '<input type="text" value="" name="'.$option['id'].'-background-image[]" id="'.$uid.'_field" class="bg-image-field"/><br>';
 							echo '<a href="#" class="upload-image-'.$uid.' button button-primary image-upload">Upload Image</a><br>';
 							echo '<img src="http://placehold.it/350x350&text=BG" class="preview-image" id="'.$uid.'_image"><br>';
 						echo '</td>';
@@ -337,6 +378,15 @@ class acoc_field_parallax{
 						echo '<td>';
 							echo '<label>Section ID</label><br >';
 							echo '<input id="slider-section-id-'.$uid.'" type="text" value="unique-id" name="'.$option['id'].'-section-id[]" />';
+						echo '</td>';
+						echo '<td>';
+							echo '<label>Content Align</label><br >';
+							echo '<select id="slider-align-content-'.$uid.'" type="text" value="" name="'.$option['id'].'-align-content[]">
+									<option '.selected($parallax_item['align-content'], 'left', false).' value="left">left</option>
+									<option '.selected($parallax_item['align-content'], 'center', false).' value="center">center</option>
+									<option '.selected($parallax_item['align-content'], 'right', false).' value="right">right</option>
+									<option '.selected($parallax_item['align-content'], 'none', false).' value="none">none</option>
+								  </select><br >';
 						echo '</td>';
 					echo '</tr>';
 				echo '</table>';
@@ -416,6 +466,7 @@ class acoc_field_parallax{
 			var file_frame_<?php echo $uid ?>;
 			jQuery('.upload-image-<?php echo $uid ?>').live('click', function( event ){
 				event.preventDefault();
+				var the_button = jQuery(this);
 
 				// If the media frame already exists, reopen it.
 				if ( file_frame_<?php echo $uid ?> ) { file_frame_<?php echo $uid ?>.open(); return; }
@@ -435,8 +486,12 @@ class acoc_field_parallax{
 					attachment = file_frame_<?php echo $uid ?>.state().get('selection').first().toJSON();
 		
 					// Do something with attachment.id and/or attachment.url here
-					jQuery('img#<?php echo $uid ?>_image').attr('src', attachment.url);
-					jQuery('input#<?php echo $uid ?>_field').val(attachment.url);
+					
+					//jQuery('img#<?php echo $uid ?>_image').attr('src', attachment.url);
+					//jQuery('input#<?php echo $uid ?>_field').val(attachment.url);
+					
+					jQuery(the_button).next().next().attr('src', attachment.url);
+					jQuery(the_button).prev().prev().val(attachment.url);
 				});
 
 				// Finally, open the modal
@@ -455,16 +510,19 @@ class acoc_field_parallax{
 		$parallax_hiden =  $_POST[$field_id.'-hiden'];
 		$parallax_title =  $_POST[$field_id.'-title'];
 		$parallax_subtitle =  $_POST[$field_id.'-subtitle'];
+		$parallax_disable_title =  $_POST[$field_id.'-disable-title'];
+		$parallax_align_content =  $_POST[$field_id.'-align-content'];
+		$parallax_align_title =  $_POST[$field_id.'-align-title'];
 		$parallax_padding_top =  $_POST[$field_id.'-padding-top'];
 		$parallax_padding_bottom =  $_POST[$field_id.'-padding-bottom'];
 		$parallax_border_top =  $_POST[$field_id.'-border-top'];
 		$parallax_border_top_color =  $_POST[$field_id.'-border-top-color'];
 		$parallax_border_bottom =  $_POST[$field_id.'-border-bottom'];
 		$parallax_border_bottom_color =  $_POST[$field_id.'-border-bottom-color'];
-		$parallax_bg_color =  $_POST[$field_id.'-bg-color'];
+		$parallax_bg_color =  $_POST[$field_id.'-background-color'];
 		$parallax_text_color =  $_POST[$field_id.'-text-color'];
 		$parallax_heading_color =  $_POST[$field_id.'-heading-color'];
-		$parallax_image =  $_POST[$field_id.'-image'];
+		$parallax_background_image =  $_POST[$field_id.'-background-image'];
 		$parallax_background_attachment =  $_POST[$field_id.'-background-attachment'];
 		$parallax_background_repeat =  $_POST[$field_id.'-background-repeat'];
 		$parallax_background_position =  $_POST[$field_id.'-background-position'];
@@ -477,16 +535,19 @@ class acoc_field_parallax{
 		for ( $i = 0; $i < $count; $i++ ) {
 			$new[$i]['title'] = $parallax_title[$i];
 			$new[$i]['subtitle'] = $parallax_subtitle[$i];
+			$new[$i]['disable-title'] = $parallax_disable_title[$i];
+			$new[$i]['align-content'] = $parallax_align_content[$i];
+			$new[$i]['align-title'] = $parallax_align_title[$i];
 			$new[$i]['padding-top'] = $parallax_padding_top[$i];
 			$new[$i]['padding-bottom'] = $parallax_padding_bottom[$i];
 			$new[$i]['border-top'] = $parallax_border_top[$i];
 			$new[$i]['border-top-color'] = $parallax_border_top_color[$i];
 			$new[$i]['border-bottom'] = $parallax_border_bottom[$i];
 			$new[$i]['border-bottom-color'] = $parallax_border_bottom_color[$i];
-			$new[$i]['bg-color'] = $parallax_bg_color[$i];
+			$new[$i]['background-color'] = $parallax_bg_color[$i];
 			$new[$i]['text-color'] = $parallax_text_color[$i];
 			$new[$i]['heading-color'] = $parallax_heading_color[$i];
-			$new[$i]['image'] = $parallax_image[$i];
+			$new[$i]['background-image'] = $parallax_background_image[$i];
 			$new[$i]['background-attachment'] = $parallax_background_attachment[$i];
 			$new[$i]['background-repeat'] = $parallax_background_repeat[$i];
 			$new[$i]['background-position'] = $parallax_background_position[$i];
