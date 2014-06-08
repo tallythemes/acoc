@@ -93,7 +93,6 @@ class acoc_metabox_register {
 		
 		if(is_array($this->options['fields'])){
 			foreach($this->options['fields'] as $field){
-				include(ACOC_DRI.'fields/'.$field['type'].'.php');
 				$class_name = 'acoc_field_'.$field['type'];
 				$field_class = new $class_name;
 				$data = $field_class->save($field['id']);

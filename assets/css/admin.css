@@ -56,6 +56,22 @@
 .acoc-form-field.field-type-parallax .bg-image-field{ width:150px; }
 
 
+/*-- fields style (slideshow2)--*/
+.acoc-form-field.field-type-slideshow2{  }
+.acoc-form-field.field-type-slideshow2 ul{  list-style-type:none; }
+.acoc-form-field.field-type-slideshow2 li{ background: #F8F8F8;border: solid 1px #D8D7D7;padding: 20px;border-radius: 3px; margin-bottom:8px; list-style-type:none; }
+.acoc-form-field.field-type-slideshow2 .row-addnew{ margin-bottom:20px; }
+.acoc-form-field.field-type-slideshow2 .row-title{ font-size: 16px; text-decoration: none; }
+.acoc-form-field.field-type-slideshow2 .row-edit{ float: right; margin-left: 10px; text-decoration: none; color: #33AF02; }
+.acoc-form-field.field-type-slideshow2 .row-delete{ float: right; text-decoration: none; color: #FD0000; }
+.acoc-form-field.field-type-slideshow2 .form-table td{ vertical-align: top; }
+.acoc-form-field.field-type-slideshow2 .wp-picker-container{  }
+.acoc-form-field.field-type-slideshow2 label{ text-align: left; padding: 0; padding-bottom:5px; line-height: 1.3; font-weight: 600; display: inline-block; font-size: 13px; }
+.acoc-form-field.field-type-slideshow2 .button-primary.image-upload{ width:150px; text-align:center; max-width:100%; }
+.acoc-form-field.field-type-slideshow2 .preview-image{ width:150px; max-width:100%;  }
+.acoc-form-field.field-type-slideshow2 .bg-image-field{ width:150px; }
+
+
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 /* Style for TinyMCE class
