@@ -33,6 +33,8 @@ include('functions.php');
 //Loading extranal JavaScript and CSS
 include('load-extranal-scripts.php');
 
+//Loading Classes
+include('fields/_init.php');
 
 //Loading Classes
 include('classes/metabox-register-class.php');

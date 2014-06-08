@@ -55,6 +55,6 @@ add_action( 'admin_enqueue_scripts', 'acoc_load_admin_scripts');
 function acoc_load_admin_scripts(){
 	$css = ACOC_URL . 'assets/css/';
 	$js = ACOC_URL . 'assets/js/';
-	
+	wp_enqueue_script('acoc-admin', $js.'acoc-admin.js', array(), null);
 	wp_enqueue_style( 'acoc-admin', $css.'admin.css', '', '1.0' );
 }

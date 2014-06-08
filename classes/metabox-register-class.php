@@ -118,7 +118,6 @@ class acoc_metabox_register {
 			foreach($this->options['fields'] as $field){
 				echo '<div class="acoc-metabox-item" style="margin-bottom:20px;">';
 					$value = get_post_meta( $post->ID, $field['id'], true );
-					include(ACOC_DRI.'fields/'.$field['type'].'.php');
 					$class_name = 'acoc_field_'.$field['type'];
 					$field_class = new $class_name;
 					$field_class->html($field, $value);

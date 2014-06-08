@@ -74,7 +74,6 @@ class acoc_tinymce_register {
 		if(is_array($data['fields'])){
 			foreach($data['fields'] as $field){
 				$value = $field['std'];
-				include(ACOC_DRI.'fields/'.$field['type'].'.php');
 				$class_name = 'acoc_field_'.$field['type'];
 				$field_class = new $class_name;
 				$field['id'] = $uid."_".$field['id'];

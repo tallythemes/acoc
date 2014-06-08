@@ -73,7 +73,6 @@ class acoc_setting_api_class{
 						echo '<div class="acoc-setting-item">';
 							$all_value = get_option($this->options['option_name']);
 							$value = $all_value[$field['id']];
-							include(ACOC_DRI.'fields/'.$field['type'].'.php');
 							$class_name = 'acoc_field_'.$field['type'];
 							$field_class = new $class_name;
 							$field_class->html($field, $value);
