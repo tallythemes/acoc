@@ -4,9 +4,10 @@ class acoc_field_group{
 	public $atts;
 	public $value;
 	
-	function __construct($atts = NULL, $value = NULL){
+	function __construct($atts = array(), $value = NULL){
 		$this->atts = $this->field_default_options($atts);
 		$this->value = $value;
+		
 		
 		add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue_scripts') );
 		add_action( 'admin_footer', array($this, 'the_javascript') );
@@ -41,6 +42,7 @@ class acoc_field_group{
 		$options = array_merge( array(
 			'id' => '',
 			'class' => '',
+			'html_id' => '',
 			'label' => '',
 			'type' => '',
 			'std' => '',
@@ -102,7 +104,7 @@ class acoc_field_group{
 							
 		for ( $i = 0; $i < $count; $i++ ) {
 			foreach($option['fields'] as $field){
-				$the_post =  $_POST[$field_id.'-'.$field['id']];
+				$the_post =  $_POST[$field_id.'_'.$field['id']];
 				$new[$i][$field['id']] = $the_post[$i];
 			}
 		}
@@ -110,7 +112,7 @@ class acoc_field_group{
 		return $new;
 	}
 	
-	function list_view($name, $key = 0, $uid, $fields, $value = NULL , $class = NULL){
+	function list_view($name, $html_id = NULL, $uid, $fields, $value = NULL , $class = NULL){
 		?>
 		<div class="acoc-list-item acoc-list-item-<?php echo $uid; ?>">
 			<div class="acoc-list-item-header">
@@ -124,10 +126,11 @@ class acoc_field_group{
 					<?php foreach($fields as $field): ?>
 						<?php
 						$field_id = $field['id'];
-						$field['id'] = $name.'-'.$field['id'].'[]';
+						$field['id'] = $name.'_'.$field['id'].'[]';
+						$field['html_id'] = $name.'_'.$field_id.rand();
 						$class_name = 'acoc_field_'.$field['type'];
-						$field_class = new $class_name;
-						$field_class->html($field, $value[$field_id ]);
+						$field_class = new $class_name($field, $value[$field_id ]);
+						$field_class->html();
 						?>
 					<?php endforeach; ?>
 				<?php else: ?>

@@ -5,7 +5,7 @@ class acoc_field_taxonomy_multi_select{
 	public $atts;
 	public $value;
 	
-	function __construct($atts = NULL, $value = NULL){
+	function __construct($atts = array(), $value = NULL){
 		$this->atts = $this->field_default_options($atts);
 		$this->value = $value;
 	}
