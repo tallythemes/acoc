@@ -2,9 +2,16 @@
 if(!class_exists('acoc_field_textarea')):
 class acoc_field_textarea{
 		
-	function html($atts, $value){
-		global $post;
-		$option = array_merge( array(
+	public $atts;
+	public $value;
+	
+	function __construct($atts = NULL, $value = NULL){
+		$this->atts = $this->field_default_options($atts);
+		$this->value = $value;
+	}
+		
+	function field_default_options($atts){
+		$options = array_merge( array(
 			'id' => '',
 			'class' => '',
 			'label' => '',
@@ -15,7 +22,13 @@ class acoc_field_textarea{
 			'rows' => '4',
 		), $atts );
 		
-		$uid = $option['id'].'_acoc_slideshow_'.rand();
+		return $options;
+	}
+		
+	function html(){
+		global $post;
+		$option = $this->atts;
+		$value = $this->value;
 		
 		echo '<div class="acoc-form-field field-type-textarea">';
 			echo '<label for="'.$option['id'].'">'.$option['label'].'</label><br>';

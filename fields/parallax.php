@@ -1,7 +1,13 @@
 <?php
 if(!class_exists('acoc_field_parallax')):
 class acoc_field_parallax{
-	function __construct(){
+	
+	public $atts;
+	public $value;
+	
+	function __construct($atts = NULL, $value = NULL){
+		$this->atts = $this->field_default_options($atts);
+		$this->value = $value;
 		add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue_scripts') );
 		add_action( 'admin_footer', array($this, 'the_javascript') );
 	}
@@ -47,9 +53,12 @@ class acoc_field_parallax{
 	}
 	
 	
-	function html($atts, $value){
+	function html(){
 		global $post;
-		$option = $this->field_default_options($atts);
+		
+		$option = $this->atts;
+		$value = $this->value;
+		
 		$parallax_items = $value;
 		$uid = $option['id'].'_acoc_parallax_'.rand();
 		
@@ -267,7 +276,7 @@ class acoc_field_parallax{
 						echo '</td>';
 						echo '<td>';
 							echo '<label>Disable Titles</label><br >';
-							echo '<select id="slider-disable-title-'.$uid.'" type="text" value="'.$parallax_item['disable-title'].'" name="'.$option['id'].'-disable-title[]">
+							echo '<select id="slider-disable-title-'.$uid.'" type="text" value="" name="'.$option['id'].'-disable-title[]">
 							<option value="no">no</option>
 							<option value="yes">yes</option>
 							</select><br >';
@@ -382,10 +391,10 @@ class acoc_field_parallax{
 						echo '<td>';
 							echo '<label>Content Align</label><br >';
 							echo '<select id="slider-align-content-'.$uid.'" type="text" value="" name="'.$option['id'].'-align-content[]">
-									<option '.selected($parallax_item['align-content'], 'left', false).' value="left">left</option>
-									<option '.selected($parallax_item['align-content'], 'center', false).' value="center">center</option>
-									<option '.selected($parallax_item['align-content'], 'right', false).' value="right">right</option>
-									<option '.selected($parallax_item['align-content'], 'none', false).' value="none">none</option>
+									<option value="left">left</option>
+									<option value="center">center</option>
+									<option value="right">right</option>
+									<option value="none">none</option>
 								  </select><br >';
 						echo '</td>';
 					echo '</tr>';

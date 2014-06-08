@@ -2,22 +2,35 @@
 if(!class_exists('acoc_field_image_upload')):
 class acoc_field_image_upload{
 	
-	function __construct(){
+	public $atts;
+	public $value;
+	
+	function __construct($atts = NULL, $value = NULL){
+		$this->atts = $this->field_default_options($atts);
+		$this->value = $value;
+		
 		add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue_scripts') );
 	}
 		
-	function html($atts, $value){
-		global $post;
-		$option = array_merge( array(
+	function field_default_options($atts){
+		$options = array_merge( array(
 			'id' => '',
 			'class' => '',
 			'label' => '',
 			'type' => '',
 			'std' => '',
 			'des' => '',
-			'size' => '300x300',
 			'filter' => '', //sanitize_text_field, esc_attr
+			'rows' => '4',
 		), $atts );
+		
+		return $options;
+	}
+		
+	function html(){
+		global $post;
+		$option = $this->atts;
+		$value = $this->value;
 		
 		if($value == ""){ $value = $option['std']; }
 		$image_url = ( $value == "" ) ? 'http://placehold.it/'.$option['size'] : $value;

@@ -88,8 +88,6 @@ class acoc_field_group{
 		
 		$this->list_view_javascript($uid, $option['id']);		
 		echo '</div>';
-		
-		//print_r($this->save($option['id']));
 	}
 	
 	
@@ -104,7 +102,7 @@ class acoc_field_group{
 							
 		for ( $i = 0; $i < $count; $i++ ) {
 			foreach($option['fields'] as $field){
-				$the_post =  $_POST[$option['id'].'-'.$field['id']];
+				$the_post =  $_POST[$field_id.'-'.$field['id']];
 				$new[$i][$field['id']] = $the_post[$i];
 			}
 		}
