@@ -74,8 +74,8 @@ class acoc_setting_api_class{
 							$all_value = get_option($this->options['option_name']);
 							$value = $all_value[$field['id']];
 							$class_name = 'acoc_field_'.$field['type'];
-							$field_class = new $class_name;
-							$field_class->html($field, $value);
+							$field_class = new $class_name($field, $value);
+							$field_class->html();
 						echo '</div>';
 					}
 					echo '<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>';
@@ -98,7 +98,7 @@ class acoc_setting_api_class{
 		if(is_array($this->options['fields'])){
 			foreach($this->options['fields'] as $field){
 				$class_name = 'acoc_field_'.$field['type'];
-				$field_class = new $class_name;
+				$field_class = new $class_name($field);
 				$data = $field_class->save($field['id']);
 				if($field['filter'] != ''){ $data = $field['filter']($data); }
 				

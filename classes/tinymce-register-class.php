@@ -74,10 +74,10 @@ class acoc_tinymce_register {
 		if(is_array($data['fields'])){
 			foreach($data['fields'] as $field){
 				$value = $field['std'];
-				$class_name = 'acoc_field_'.$field['type'];
-				$field_class = new $class_name;
 				$field['id'] = $uid."_".$field['id'];
-				$field_class->html($field, $value);
+				$class_name = 'acoc_field_'.$field['type'];
+				$field_class = new $class_name($field, $value);
+				$field_class->html();
 			}
 		}
 		
