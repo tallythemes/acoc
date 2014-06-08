@@ -94,7 +94,7 @@ class acoc_metabox_register {
 		if(is_array($this->options['fields'])){
 			foreach($this->options['fields'] as $field){
 				$class_name = 'acoc_field_'.$field['type'];
-				$field_class = new $class_name($field);
+				$field_class = new $class_name;
 				$data = $field_class->save($field['id']);
 				if($field['filter'] != ''){ $data = $field['filter']($data); }
 				update_post_meta( $post_id, $field['id'], $data );
@@ -118,8 +118,8 @@ class acoc_metabox_register {
 				echo '<div class="acoc-metabox-item" style="margin-bottom:20px;">';
 					$value = get_post_meta( $post->ID, $field['id'], true );
 					$class_name = 'acoc_field_'.$field['type'];
-					$field_class = new $class_name($field, $value);
-					$field_class->html();
+					$field_class = new $class_name;
+					$field_class->html($field, $value);
 				echo '</div>';
 			}
 		}else{
