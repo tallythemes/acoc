@@ -22,6 +22,37 @@ function acoc_image_size($url, $width = '', $height = '', $crop = true, $align =
 }
 endif;
 
+
+/**
+ * Helper function to return encoded strings
+ *
+ * @return    string
+ *
+ * @access    public
+ * @since     1.0
+ */
+function acoc_encode( $value ) {
+
+  $func = 'base64' . '_encode';
+  return $func( $value );
+  
+}
+
+/**
+ * Helper function to return decoded strings
+ *
+ * @return    string
+ *
+ * @access    public
+ * @since    1.0
+ */
+function acoc_decode( $value ) {
+
+  $func = 'base64' . '_decode';
+  return $func( $value );
+  
+}
+
 /* Output Content Nav
 -------------------------------------------------*/
 if(!function_exists('acoc_paginate')):
