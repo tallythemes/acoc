@@ -6,7 +6,6 @@ include(ACOC_DRI.'fields/parallax.php');
 include(ACOC_DRI.'fields/post_multi_select.php');
 include(ACOC_DRI.'fields/post_select.php');
 include(ACOC_DRI.'fields/select.php');
-include(ACOC_DRI.'fields/group.php');
 include(ACOC_DRI.'fields/taxonomy_multi_select.php');
 include(ACOC_DRI.'fields/taxonomy_select.php');
 include(ACOC_DRI.'fields/text.php');
