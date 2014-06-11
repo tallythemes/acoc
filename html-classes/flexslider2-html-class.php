@@ -78,7 +78,7 @@ class acoc_flexslider2_html{
 			'itemMargin' => '0',
 			'minItems' => '0',
 			'maxItems' => '0',
-			'move' => '0',
+			'move' => '1',
 		);
 		$data = array_merge($default, $data);
 		
