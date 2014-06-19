@@ -149,3 +149,103 @@ html[xmlns] .slides {display: block;}
 .acoc-flexslider2-skin .wfs-control-thumbs img {width: 100%; display: block; opacity: .7; cursor: pointer;}
 .acoc-flexslider2-skin .wfs-control-thumbs img:hover {opacity: 1;}
 .acoc-flexslider2-skin .wfs-control-thumbs .wfs-active {opacity: 1; cursor: default;}
+
+
+
+/* Carousel Theme
+*********************************/
+/* viewport */
+.acoc-flexslider2-skin-carousel .acoc-flexslider2 {	position: relative; }
+
+/* Direction Nav */
+.acoc-flexslider2-skin-carousel .wfs-direction-nav {*height: 0;}
+.acoc-flexslider2-skin-carousel .wfs-direction-nav a{ 
+	display: block; 
+	width: 20px; 
+	height: 20px; 
+	position: absolute; 
+	top: -25px; 
+	z-index: 10; 
+	overflow: hidden; 
+	opacity: 1; 
+	cursor: pointer; 
+	color: rgba(255,255,255,1); 
+	background-color:rgba(0,0,0,0.8);
+	-webkit-transition: all .3s ease; 
+	-moz-transition: all .3s ease; 
+	transition: all .3s ease; 
+	text-align:center;
+}
+.acoc-flexslider2-skin-carousel .wfs-direction-nav .wfs-prev { right: 21px; }
+.acoc-flexslider2-skin-carousel .wfs-direction-nav .wfs-next { right: 0px; }
+.acoc-flexslider2-skin-carousel .acoc-flexslider2:hover .wfs-next:hover,
+.acoc-flexslider2-skin-carousel .acoc-flexslider2:hover .wfs-prev:hover { opacity: 0.7; color:inherit; }
+.acoc-flexslider2-skin-carousel .wfs-direction-nav .wfs-disabled { opacity: 0!important; filter:alpha(opacity=0); cursor: default; }
+.acoc-flexslider2-skin-carousel .wfs-direction-nav a:before  { font-family: "flexslider-icon"; font-size: 12px; display: inline-block; content: '\f001'; color:inherit; }
+.acoc-flexslider2-skin-carousel .wfs-direction-nav a.wfs-next:before  { content: '\f002'; }
+
+/* Pause/Play */
+.acoc-flexslider2-skin-carousel .wfs-pauseplay a { display:none; }
+
+/* Control Nav */
+.acoc-flexslider2-skin-carousel .wfs-control-nav { position: absolute; top: -20px;  margin:0;}
+.acoc-flexslider2-skin-carousel .wfs-control-nav li {margin: 0 3px; display: inline-block; zoom: 1; *display: inline;}
+.acoc-flexslider2-skin-carousel .wfs-control-paging li a {
+	width: 5px; 
+	height: 5px; 
+	display: block; 
+	background: rgba(0,0,0,0.5); 
+	cursor: pointer; 
+	text-indent: -9999px; 
+	-webkit-border-radius: 20px; 
+	-moz-border-radius: 20px; 
+	-o-border-radius: 20px; 
+	border-radius: 20px;  
+}
+.acoc-flexslider2-skin-carousel .wfs-control-paging li a:hover { background: #333; }
+.acoc-flexslider2-skin-carousel .wfs-control-paging li a.wfs-active { background: #000;cursor: default; }
+
+/* Control Nav : thumbs */
+.acoc-flexslider2-skin-carousel .wfs-control-thumbs { display:none; }
+
+
+
+
+/* Direction Nav
+*********************************/
+/*-align-*/
+.acoc-fx-nav-align-left .wfs-direction-nav { display:inline-block; position:absolute; left:0px; }
+.acoc-fx-nav-align-right .wfs-direction-nav { display:inline-block; position:absolute; right:0px; }
+.acoc-fx-nav-align-center .wfs-direction-nav { position:absolute; width:100%; display:block; text-align:center; }
+
+/*-valign-*/
+.acoc-fx-nav-valign-top .wfs-direction-nav { display:inline-block; position:absolute; top:0px; }
+.acoc-fx-nav-valign-bottom .wfs-direction-nav { display:inline-block; position:absolute; bottom:0px; }
+.acoc-fx-nav-valign-center .wfs-direction-nav { display:inline-block; position:absolute; top:48%; }
+
+/*-Style-*/
+.acoc-fx-nav-style-border .wfs-direction-nav li{ display:inline-block; }
+.acoc-fx-nav-style-border .wfs-direction-nav a{ border:solid 2px; color:#FFF; height:20px; width:20px; text-align:center; line-height:20px; display:inline-block; border-radius: 3px; }
+.acoc-fx-nav-style-border .wfs-direction-nav a.wfs-next{  }
+.acoc-fx-nav-style-border .wfs-direction-nav a.wfs-prev{ margin-right:4px; }
+.acoc-fx-nav-style-border .wfs-direction-nav a:before{ font-family: "flexslider-icon"; font-size: 10px; display: inline-block; content: '\f001'; color:inherit; }
+.acoc-fx-nav-style-border .wfs-direction-nav a.wfs-next:before{ content:'\f002'; }
+
+
+/* Control Nav
+*********************************/
+/*-align-*/
+.acoc-fx-cnav-align-left .wfs-control-nav { position: absolute; left:0px;  margin:0;}
+.acoc-fx-cnav-align-right .wfs-control-nav { position: absolute; right:0px;  margin:0;}
+.acoc-fx-cnav-align-center .wfs-control-nav { position:absolute; width:100%; display:block; text-align:center; }
+
+/*-valign-*/
+.acoc-fx-cnav-valign-top .wfs-control-nav { display:inline-block; position:absolute; top:0px; }
+.acoc-fx-cnav-valign-bottom .wfs-control-nav { display:inline-block; position:absolute; bottom:0px; }
+.acoc-fx-cnav-valign-center .wfs-control-nav { display:inline-block; position:absolute; top:48%; }
+
+/*-Style-*/
+.acoc-fx-cnav-style-border .wfs-control-nav li {margin: 0 3px; display: inline-block; zoom: 1; *display: inline;}
+.acoc-fx-cnav-style-border .wfs-control-paging li a {width: 5px; height: 5px; display: block; cursor: pointer; text-indent: -9999px; border-radius: 20px;  border:solid 1px;}
+.acoc-fx-cnav-style-border .wfs-control-paging li a:hover { background: #333; }
+.acoc-fx-cnav-style-border .wfs-control-paging li a.wfs-active { background: #000;cursor: default; }
