@@ -214,13 +214,16 @@ html[xmlns] .slides {display: block;}
 /* Direction Nav
 *********************************/
 /*-align-*/
-.acoc-fx-nav-align-left .wfs-direction-nav { display:inline-block; position:absolute; left:0px; }
-.acoc-fx-nav-align-right .wfs-direction-nav { display:inline-block; position:absolute; right:0px; }
+.acoc-fx-nav-align-left .wfs-direction-nav { display:inline-block; position:absolute; left:10px; }
+.acoc-fx-nav-align-right .wfs-direction-nav { display:inline-block; position:absolute; right:10px; }
 .acoc-fx-nav-align-center .wfs-direction-nav { position:absolute; width:100%; display:block; text-align:center; }
+.acoc-fx-nav-align-both .wfs-direction-nav{position:absolute; width:100%; display:block;}
+.acoc-fx-nav-align-both .wfs-direction-nav a.wfs-next{ position:absolute; right:10px; }
+.acoc-fx-nav-align-both .wfs-direction-nav a.wfs-prev{ position:absolute; left:10px; }
 
 /*-valign-*/
-.acoc-fx-nav-valign-top .wfs-direction-nav { display:inline-block; position:absolute; top:0px; }
-.acoc-fx-nav-valign-bottom .wfs-direction-nav { display:inline-block; position:absolute; bottom:0px; }
+.acoc-fx-nav-valign-top .wfs-direction-nav { display:inline-block; position:absolute; top:10px; }
+.acoc-fx-nav-valign-bottom .wfs-direction-nav { display:inline-block; position:absolute; bottom:10px; }
 .acoc-fx-nav-valign-center .wfs-direction-nav { display:inline-block; position:absolute; top:48%; }
 
 /*-Style-*/
@@ -231,17 +234,24 @@ html[xmlns] .slides {display: block;}
 .acoc-fx-nav-style-border .wfs-direction-nav a:before{ font-family: "flexslider-icon"; font-size: 10px; display: inline-block; content: '\f001'; color:inherit; }
 .acoc-fx-nav-style-border .wfs-direction-nav a.wfs-next:before{ content:'\f002'; }
 
+.acoc-fx-nav-style-fill .wfs-direction-nav li{ display:inline-block; }
+.acoc-fx-nav-style-fill .wfs-direction-nav a{ color:#FFF; height:40px; width:40px; text-align:center; line-height:40px; display:inline-block; border-radius: 3px;  background-color:rgba(0,0,0,0.8);}
+.acoc-fx-nav-style-fill .wfs-direction-nav a.wfs-next{  }
+.acoc-fx-nav-style-fill .wfs-direction-nav a.wfs-prev{ margin-right:4px; }
+.acoc-fx-nav-style-fill .wfs-direction-nav a:before{ font-family: "flexslider-icon"; font-size: 10px; display: inline-block; content: '\f001'; color:inherit; }
+.acoc-fx-nav-style-fill .wfs-direction-nav a.wfs-next:before{ content:'\f002'; }
+
 
 /* Control Nav
 *********************************/
 /*-align-*/
-.acoc-fx-cnav-align-left .wfs-control-nav { position: absolute; left:0px;  margin:0;}
-.acoc-fx-cnav-align-right .wfs-control-nav { position: absolute; right:0px;  margin:0;}
+.acoc-fx-cnav-align-left .wfs-control-nav { position: absolute; left:10px;  margin:0;}
+.acoc-fx-cnav-align-right .wfs-control-nav { position: absolute; right:10px;  margin:0;}
 .acoc-fx-cnav-align-center .wfs-control-nav { position:absolute; width:100%; display:block; text-align:center; }
 
 /*-valign-*/
-.acoc-fx-cnav-valign-top .wfs-control-nav { display:inline-block; position:absolute; top:0px; }
-.acoc-fx-cnav-valign-bottom .wfs-control-nav { display:inline-block; position:absolute; bottom:0px; }
+.acoc-fx-cnav-valign-top .wfs-control-nav { display:inline-block; position:absolute; top:10px; }
+.acoc-fx-cnav-valign-bottom .wfs-control-nav { display:inline-block; position:absolute; bottom:10px; }
 .acoc-fx-cnav-valign-center .wfs-control-nav { display:inline-block; position:absolute; top:48%; }
 
 /*-Style-*/
