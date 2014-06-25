@@ -17,6 +17,9 @@ namespace: acoc
 
 ACOC
 */
+
+if(!function_exists( 'acoc_forceLoadFirst' )):
+
 $path_dir = trailingslashit(str_replace('\\','/',dirname(__FILE__)));
 $path_abs = trailingslashit(str_replace('\\','/',ABSPATH));
 
@@ -70,7 +73,7 @@ include('vandors/mr-image-resize/mr-image-resize.php');
  * @since   1.0
  * @see	 http://snippets.khromov.se/modify-wordpress-plugin-load-order/
 */
-add_action( 'activated_plugin', 'acoc_forceLoadFirst');
+
 function acoc_forceLoadFirst() {
 	$path = str_replace( WP_PLUGIN_DIR . '/', '', __FILE__ );
 	if ( $plugins = get_option( 'active_plugins' ) ) {
@@ -81,3 +84,6 @@ function acoc_forceLoadFirst() {
 		}
 	}
 }
+add_action( 'activated_plugin', 'acoc_forceLoadFirst');
+
+endif;
