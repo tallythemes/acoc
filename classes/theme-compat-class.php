@@ -85,18 +85,19 @@ class acoc_theme_compat{
 	function the_content($content){
 		global $post, $wpdb, $wp_query;
 		if( empty($post) ) return $content; //fix for any other plugins calling the_content outside the loop
+		$options = $this->options;
 		
 		if(is_single() && get_post_type() == $options['post_type']  ) {
 			if($options['single_page'] == true){
-				$content =  $options['single_content'];
+				$content =  $options['single_content']();
 			}
 		}elseif(is_post_type_archive( $options['post_type'] )) {
 			if($options['archive_page'] == true){
-				$content =  $options['archive_content'];
+				$content =  $options['archive_content']();
 			}
 		}elseif(is_tax($options['taxonomy'])) {
 			if($options['taxonomy_page'] == true){
-				$content =  $options['taxonomy_content'];
+				$content =  $options['taxonomy_content']();
 			}
 		}	
 		
@@ -106,6 +107,8 @@ class acoc_theme_compat{
 	
 	
 	function pre_get_posts( $query ) {
+		
+		$options = $this->options;
 		
 		if( $query->is_main_query() && !is_admin() && is_post_type_archive( $options['post_type'] ) ) {
 			if($options['archive_page'] == true){
@@ -123,6 +126,7 @@ class acoc_theme_compat{
 	/*	Change "the_title" filter to change the  title of archive and Tax pages
 	----------------------------------------------*/
 	function the_title_filter( $title ) {
+		$options = $this->options;
 		
 		if(is_post_type_archive( $options['post_type'])) {
 			$title = $options['archive_title'];
