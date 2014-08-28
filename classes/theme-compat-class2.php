@@ -161,10 +161,7 @@ class acoc_theme_compat2{
 	}
 	
 	
-	function _singles_content_filter(){
-		global $post, $wpdb, $wp_query;
-		if( empty($post) ) return $content; //fix for any other plugins calling the_content outside the loop
-		
+	function _singles_content_filter(){		
 		if(is_array($this->singles)){
 			foreach($this->singles as $singles){
 				if(is_single() && get_post_type() == $singles['post_type']){
@@ -181,8 +178,6 @@ class acoc_theme_compat2{
 				}
 			}
 		}
-		
-		return $content;
 	}	
 
 	
