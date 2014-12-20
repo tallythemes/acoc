@@ -18,8 +18,6 @@ namespace: acoc
 ACOC
 */
 
-if(!function_exists( 'acoc_forceLoadFirst' )):
-
 $path_dir = trailingslashit(str_replace('\\','/',dirname(__FILE__)));
 $path_abs = trailingslashit(str_replace('\\','/',ABSPATH));
 
@@ -62,31 +60,5 @@ include('html-classes/masonry-html-class.php');
 
 
 //Loading vandors
-include('vandors/mr-image-resize/mr-image-resize.php');
+if(!function_exists('mr_common_info')){include('vandors/mr-image-resize/mr-image-resize.php');}else{ echo 'acoc'; }
 include('vandors/cmb/init.php');
-
-
-
-/**
- * Forces our plugin to be loaded first. This is to ensure that plugins that use the framework have access to
- * this class.
- *
- * @access  public
- * @return  void
- * @since   1.0
- * @see	 http://snippets.khromov.se/modify-wordpress-plugin-load-order/
-*/
-
-function acoc_forceLoadFirst() {
-	$path = str_replace( WP_PLUGIN_DIR . '/', '', __FILE__ );
-	if ( $plugins = get_option( 'active_plugins' ) ) {
-		if ( $key = array_search( $path, $plugins ) ) {
-			array_splice( $plugins, $key, 1 );
-			array_unshift( $plugins, $path );
-			update_option( 'active_plugins', $plugins );
-		}
-	}
-}
-add_action( 'activated_plugin', 'acoc_forceLoadFirst');
-
-endif;
