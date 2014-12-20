@@ -85,24 +85,27 @@ function acoc_oembed_result_embed_remove($embed) {
 if(!function_exists('acoc_image_size')):
 function acoc_image_size($url, $width = '', $height = '', $crop = true, $align = '', $retina = ACOC_IMAGE_RETINA_SUPPORT){
 	global $wpdb;
+	$output = $url;
 	
     $query = "SELECT ID FROM {$wpdb->posts} WHERE guid='$url'";
     $id = $wpdb->get_var($query);
 	
-	if($url == NULL){ 
-		$url = 'http://placehold.it/'.$width.'x'.$height; 
-		return $url;
+	if($id == NULL){ 
+		$output = 'http://placehold.it/'.$width.'x'.$height;
+		return $output; 
 	}
+	
+	if( ACOC_DISABLE_IMAGE_RESIZER == true ){ return $output; }
 	
 	if(function_exists('mr_image_resize')){
 		if($id == false){
-			return $url;
+			// do nothing
 		}else{
-			return mr_image_resize($url, $width, $height, $crop, $align, $retina);
+			$output = mr_image_resize($url, $width, $height, $crop, $align, $retina);
 		}
-	}else{
-		return $url;
 	}
+	
+	return $output;
 }
 endif;
 
@@ -176,7 +179,9 @@ function acoc_post_thumbnail($args = array()){
 	if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $args['id'] ) ){
 		$thumb_id = get_post_thumbnail_id($args['id']);
 		$thumb_url = wp_get_attachment_image_src($thumb_id, 'full', true);
-		$output = acoc_image_size($thumb_url[0], $args['w'], $args['h'], $args['crop']);
+		$the_image_url = $thumb_url[0];
+		if(strpos($thumb_url[0], 'default.png')){ $the_image_url = ''; }
+		$output = acoc_image_size($the_image_url, $args['w'], $args['h'], $args['crop']);
 	}elseif($args['placeholder'] != ''){
 		$output = $args['placeholder'];
 	}

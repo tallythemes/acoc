@@ -59,7 +59,7 @@ class acoc_setting_api_class{
 		
 		echo '<form action="" method="post">';
 			wp_nonce_field( $this->nonce_action, $this->nonce_name );
-			echo '<div class="wrap">';
+			echo '<div class="wrap" id="'.$this->options['id'].'">';
 				echo '<h2>'.$this->options['page_title'].'</h2>';
 				
 				//show success message
@@ -70,7 +70,7 @@ class acoc_setting_api_class{
 				}
 				if(is_array($this->options['fields']) && !empty($this->options['fields'])){
 					foreach($this->options['fields'] as $field){
-						echo '<div class="acoc-setting-item">';
+						echo '<div class="acoc-setting-item '.$field['class'].' acoc-setting-item-type-'.$field['type'].'">';
 							$all_value = get_option($this->options['option_name']);
 							$value = $all_value[$field['id']];
 							$class_name = 'acoc_field_'.$field['type'];
@@ -79,11 +79,18 @@ class acoc_setting_api_class{
 						echo '</div>';
 					}
 					echo '<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="Save Changes"></p>';
+					
+					
+					echo '<hr /><h3>Import Option Data:</h3>';
+					echo '<textarea style="width:50%; height:150px;" name="import_data"></textarea>';
+					echo '<p class="submit"><input type="submit" name="submit_import_data" id="submit_import_data" class="button" value="Import Data"></p>';
+					
 				}else{
 					echo 'Please add some fields';	
 				}
 			echo '</div>';
 		echo '</form>';
+		
 	}
 	
 	
@@ -103,6 +110,11 @@ class acoc_setting_api_class{
 				if($field['filter'] != ''){ $data = $field['filter']($data); }
 				
 				$option_data[$field['id']] = $data;
+			}
+			if(isset($_POST['submit_import_data'])){
+				if(!empty($_POST['import_data'])){
+					$option_data = unserialize( acoc_decode( $_POST['import_data'] ) );
+				}
 			}
 			update_option( $this->options['option_name'], $option_data );
 		}	
